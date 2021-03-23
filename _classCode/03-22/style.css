@@ -2,3 +2,9 @@ body {
   max-width: 900px;
   color: red;
 }
+
+a {
+  display: inline-block;
+  color: blue;
+  font-size: 300px;
+}
