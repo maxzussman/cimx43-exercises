@@ -1,8 +1,3 @@
-/*
-Create by Learn Web Developement
-Youtube channel : https://www.youtube.com/channel/UC8n8ftV94ZU_DJLOLtrpORA
-*/
-
 const cvs = document.getElementById('snake');
 const ctx = cvs.getContext('2d');
 
@@ -12,10 +7,10 @@ const box = 32;
 // load images
 
 const ground = new Image();
-ground.src = 'img/ground.png';
+ground.src = 'img/ground1.png';
 
 const foodImg = new Image();
-foodImg.src = 'img/food.png';
+foodImg.src = 'img/food1.png';
 
 // load audio files
 
@@ -53,7 +48,7 @@ let food = {
 
 let score = 0;
 
-//control the snake
+//controls
 
 let d;
 
@@ -76,7 +71,7 @@ function direction(event) {
   }
 }
 
-// cheack collision function
+//snake collision
 function collision(head, array) {
   for (let i = 0; i < array.length; i++) {
     if (head.x == array[i].x && head.y == array[i].y) {
@@ -98,14 +93,13 @@ function draw() {
     ctx.strokeStyle = 'red';
     ctx.strokeRect(snake[i].x, snake[i].y, box, box);
   }
-
   ctx.drawImage(foodImg, food.x, food.y);
 
-  // old head position
+  //old snake head
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
 
-  // which direction
+  //which direcrtion
   if (d == 'LEFT') snakeX -= box;
   if (d == 'UP') snakeY -= box;
   if (d == 'RIGHT') snakeX += box;
@@ -125,8 +119,7 @@ function draw() {
     snake.pop();
   }
 
-  // add new Head
-
+  //add new head
   let newHead = {
     x: snakeX,
     y: snakeY,
@@ -142,10 +135,10 @@ function draw() {
   snake.unshift(newHead);
 
   ctx.fillStyle = 'white';
-  ctx.font = '45px Changa one';
-  ctx.fillText(score, 2 * box, 1.6 * box);
+  ctx.font = '45px Arial';
+  ctx.fillText(score, 2 * box, 1.5 * box);
 }
 
-// call draw function every 100 ms
+// call draw function 100 ms
 
 let game = setInterval(draw, 100);
