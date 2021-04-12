@@ -87,10 +87,10 @@ function draw() {
   ctx.drawImage(ground, 0, 0);
 
   for (let i = 0; i < snake.length; i++) {
-    ctx.fillStyle = i == 0 ? 'goldenrod' : 'white';
+    ctx.fillStyle = i == 0 ? 'gold' : 'goldenrod';
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
 
-    ctx.strokeStyle = 'golden';
+    ctx.strokeStyle = 'white';
     ctx.strokeRect(snake[i].x, snake[i].y, box, box);
   }
   ctx.drawImage(foodImg, food.x, food.y);
@@ -136,7 +136,7 @@ function draw() {
 
   ctx.fillStyle = 'white';
   ctx.font = '40px Arial Black';
-  ctx.fillText(score, 5* box, 1.5 * box);
+  ctx.fillText(score, 5 * box, 1.5 * box);
   ctx.fillText('Bitcoin!', 7 * box, 1.5 * box);
 }
 
