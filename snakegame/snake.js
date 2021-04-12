@@ -7,10 +7,10 @@ const box = 32;
 // load images
 
 const ground = new Image();
-ground.src = 'img/ground1.png';
+ground.src = 'img/ground.png';
 
 const foodImg = new Image();
-foodImg.src = 'img/food1.png';
+foodImg.src = 'img/bit.png';
 
 // load audio files
 
@@ -87,10 +87,10 @@ function draw() {
   ctx.drawImage(ground, 0, 0);
 
   for (let i = 0; i < snake.length; i++) {
-    ctx.fillStyle = i == 0 ? 'green' : 'white';
+    ctx.fillStyle = i == 0 ? 'goldenrod' : 'white';
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
 
-    ctx.strokeStyle = 'red';
+    ctx.strokeStyle = 'golden';
     ctx.strokeRect(snake[i].x, snake[i].y, box, box);
   }
   ctx.drawImage(foodImg, food.x, food.y);
@@ -135,8 +135,9 @@ function draw() {
   snake.unshift(newHead);
 
   ctx.fillStyle = 'white';
-  ctx.font = '45px Arial';
-  ctx.fillText(score, 2 * box, 1.5 * box);
+  ctx.font = '40px Arial Black';
+  ctx.fillText(score, 1 * box, 1.5 * box);
+  ctx.fillText('Bitcoin Snake Game', 3 * box, 1.5 * box);
 }
 
 // call draw function 100 ms
