@@ -136,8 +136,8 @@ function draw() {
 
   ctx.fillStyle = 'white';
   ctx.font = '40px Arial Black';
-  ctx.fillText(score, 1 * box, 1.5 * box);
-  ctx.fillText('Bitcoin Snake Game', 3 * box, 1.5 * box);
+  ctx.fillText(score, 5* box, 1.5 * box);
+  ctx.fillText('Bitcoin!', 7 * box, 1.5 * box);
 }
 
 // call draw function 100 ms
